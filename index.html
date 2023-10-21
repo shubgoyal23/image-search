@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Image Search</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><button id="Pixabay" class="active">Pixabay</button></li>
+            <li><button id="Unsplash">Unsplash</button></li>
+            <li><button id="Pexels">Pexels</button></li>
+            <li><button id="setKeys">Api Keys</button></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>All In One Stock Image Search</h1>
+    </div>
+    <div class="search">
+        <form action="">
+            <input type="text" placeholder="Search for Image" id="input-feild">
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="result-image-container">
+        <div class="image-div">
+            <div class="image">
+                <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_1280.jpg" alt="">
+            </div>
+            <div class="tittle">
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <div class="image-div">
+            <div class="image">
+                <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_1280.jpg" alt="">
+            </div>
+            <div class="tittle">
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <div class="image-div">
+            <div class="image">
+                <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_1280.jpg" alt="">
+            </div>
+            <div class="tittle">
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button id="showMore">Show More</button>
+    </div>
+    <div class="apiKey hidden">
+        <div class="keys">
+            <h1>API Keys Required</h1>
+            <form action="">
+                <input type="text" id="pixa" placeholder="Pixabay API Key">
+                <input type="text" id="unsp" placeholder="Unsplash API Key">
+                <input type="text" id="pexe" placeholder="Pexels API Key">
+                <input type="submit" id="btn-api">
+            </form>
+            <p>Please Enter Atlest One API Key to continue To use this App.
+                You can Find Keys here <a href="https://pixabay.com/api/docs/">Pixabay</a>, <a href="https://www.pexels.com/api/">Pexels</a>, <a href="https://unsplash.com/developers">Unsplash</a> Don't worry we don't keep your key with us its stored in your local storage</p>
+        </div>
+    </div>
+</body>
+
+</html>

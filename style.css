@@ -16,7 +16,7 @@ nav ul{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    max-width: 420px;
+    max-width: 480px;
     margin: auto;
     padding: 1rem;
 }
@@ -104,6 +104,17 @@ nav ul li button{
     object-fit: cover;
     object-position: center;
 }
+.tittle p{
+    margin: 0.1rem auto;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+.tittle a{
+    text-decoration: none;
+    color: #385170;
+}
 #showMore{
     box-sizing: border-box;
     height: 40px;
@@ -121,6 +132,9 @@ nav ul li button{
 @media screen and (max-width: 420px) {
     .image-div{
         width: 100%;
+    }
+    nav ul{
+        gap: 0.2rem;
     }
 }
 
@@ -142,6 +156,7 @@ nav ul li button{
     border: #385170 solid 1px;
     border-radius: 10px;
     padding: 15px;
+    position: relative;
 }
 .keys form input{
     box-sizing: border-box;
@@ -157,5 +172,17 @@ nav ul li button{
 #btn-api{
     background-color: #385170;
     color: white;
+    cursor: pointer;
+}
+
+#close-keys-tab{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #be3144;
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
     cursor: pointer;
 }

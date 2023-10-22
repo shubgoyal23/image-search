@@ -7,10 +7,14 @@ body{
     padding: 0;
     margin: 0;
     color: #385170;
+    scroll-behavior: smooth;
 }
 nav{
     background-color: #be3144;
     margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 nav ul{
     display: flex;
@@ -34,14 +38,16 @@ nav ul li button{
     color: #eec60a;
     font-weight: 900;
 }
-
-.search{
-   
+.header{
+    margin-top: 6rem;
+    margin-bottom: 2rem;
 }
+
 .search form{
     display: flex;
     border-collapse: collapse;
     margin: 1rem auto;
+    margin-bottom: 3rem;
     justify-content: center;
 }
 .search input{
@@ -52,7 +58,7 @@ nav ul li button{
     width: 70%;
     max-width: 420px;
     padding-left: 20px;
-    background-color: #ffcece;
+    background-color: #c7d4e49a;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .search button{
@@ -124,6 +130,7 @@ nav ul li button{
     color: white;
     background-color: #385170;
     cursor: pointer;
+    margin: 2rem auto;
 }
 .hidden{
     display: none !important;

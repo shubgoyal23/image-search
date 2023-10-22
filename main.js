@@ -30,6 +30,7 @@ function imageSearchHandler(event) {
     displayPixabayImages.innerHTML = "" 
     displayunsplashImages.innerHTML = "" 
     displayPexelImages.innerHTML = "" 
+    page = 1
   }
   previousSearch = keyword
   searchStockImage(keyword);

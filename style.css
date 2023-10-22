@@ -77,7 +77,7 @@ nav ul li button{
     
 }
 
-.result-image-container{
+.pixabay-container, .pexel-container, .unsplash-container{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

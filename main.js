@@ -38,14 +38,47 @@ function imageSearchHandler(event) {
 
 function searchStockImage(keyword) {
   let keys = getLocalStoredApiKeys();
-  if (keys.pixabay.length > 0) {
+  if (Object.keys(keys).length === 0) {
+    apiKeyDiv.classList.remove("hidden");
+  }
+  if (keys.pixabay != undefined) {
     getpixabayaImages(keyword, page, keys.pixabay);
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://pixabay.com/service/about/api/" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayPixabayImages.appendChild(div);
   }
-  if (keys.unsplash.length > 0) {
+  if (keys.unsplash != undefined) {
     getunsplashImages(keyword, page, keys.unsplash);
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://unsplash.com/developers" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayunsplashImages.appendChild(div);
   }
-  if (keys.pexel.length > 0) {
+  if (keys.pexel != undefined) {
     getpexelImages(keyword, page, keys.pexel);
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://www.pexels.com/api/" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayPexelImages.appendChild(div);
   }
   page++;
   if (page > 1) {
@@ -92,7 +125,7 @@ function pixabayDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-        <img src=${photo.webformatURL} alt=${photo.tags}>
+        <img src=${photo.webformatURL} alt="${photo.tags}">
     </div>
     <div class="tittle">
         <p><a href=${photo.pageURL} target="_blank">${photo.tags} </a></p>
@@ -106,7 +139,7 @@ function unsplashDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-        <img src=${photo.urls.regular} alt=${photo.alt_description}>
+        <img src=${photo.urls.regular} alt="${photo.alt_description}">
     </div>
     <div class="tittle">
         <p><a href=${photo.links.html} target="_blank">${photo.description} </a></p>
@@ -120,7 +153,7 @@ function pexelDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-        <img src=${photo.src.large} alt=${photo.alt}>
+        <img src=${photo.src.large} alt="${photo.alt}">
     </div>
     <div class="tittle">
         <p><a href=${photo.url} target="_blank">${photo.alt} </a></p>
@@ -154,7 +187,7 @@ function apiKeyHandler(event) {
 function getLocalStoredApiKeys() {
   return localStorage.getItem("apikeys")
     ? JSON.parse(localStorage.getItem("apikeys"))
-    : {};
+    : {}
 }
 
 document.querySelector("#setKeys").addEventListener("click", () => {

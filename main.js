@@ -126,11 +126,11 @@ function pixabayDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-    <a href=${photo.pageURL} target="_blank">    
+    <a href=${photo.largeImageURL} target="_blank" download>    
     <img src=${photo.webformatURL} alt="${photo.tags}"></a>
     </div>
     <div class="tittle">
-        <p><a href=${photo.webformatURL} target="_blank" download>${photo.tags} </a></p>
+        <p><a href=${photo.pageURL} target="_blank">${photo.tags} </a></p>
         <p>By <a href= "https://pixabay.com/users/${photo.user}-${photo.user_id}" target="_blank">${photo.user}</a></p> 
     </div>`;
     displayPixabayImages.appendChild(div);
@@ -141,11 +141,11 @@ function unsplashDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-    <a href=${photo.links.html} target="_blank">
+    <a href=${photo.urls.full} target="_blank" download>
         <img src=${photo.urls.regular} alt="${photo.alt_description}"></a>
     </div>
     <div class="tittle">
-        <p><a href=${photo.urls.regular} target="_blank" download>${photo.description} </a></p>
+        <p><a href=${photo.links.html} target="_blank" >${photo.description} </a></p>
         <p>By <a href= "https://unsplash.com/@${photo.user.username}" target="_blank">${photo.user.name}</a></p> 
     </div>`;
     displayunsplashImages.appendChild(div);
@@ -156,11 +156,11 @@ function pexelDataHandler(items) {
     const div = document.createElement("div");
     div.classList.add("image-div");
     div.innerHTML = `<div class="image">
-    <a href=${photo.url} target="_blank">
+    <a href=${photo.src.large} target="_blank" download>
         <img src=${photo.src.large} alt="${photo.alt}"></a>
     </div>
     <div class="tittle">
-        <p><a href=${photo.src.large} target="_blank" download>${photo.alt} </a></p>
+        <p><a href=${photo.url} target="_blank" >${photo.alt} </a></p>
         <p>By <a href=${photo.photographer_url} target="_blank">${photo.photographer}</a></p> 
     </div>`;
     displayPexelImages.appendChild(div);

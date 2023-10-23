@@ -15,9 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let storedKeys = getLocalStoredApiKeys();
   if (Object.keys(storedKeys).length === 0) {
     apiKeyDiv.classList.remove("hidden");
-  }else{
-    searchStockImage("nature")
   }
+  searchStockImage("nature")
 });
 let page = 1;
 let previousSearch;

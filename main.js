@@ -12,13 +12,16 @@ const displayunsplashImages = document.querySelector(".unsplash-container");
 const showMoreBtn = document.querySelector("#showMore");
 
 document.addEventListener("DOMContentLoaded", () => {
-  searchStockImage("nature")
+  let storedKeys = getLocalStoredApiKeys();
+  if (Object.keys(storedKeys).length === 0) {
+    apiKeyDiv.classList.remove("hidden");
+  }
 });
 let page = 1;
 let previousSearch;
 
 searchForm.addEventListener("submit", imageSearchHandler);
-
+apiForm.addEventListener("submit", apiKeyHandler);
 
 function imageSearchHandler(event) {
   event.preventDefault();
@@ -34,14 +37,49 @@ function imageSearchHandler(event) {
 }
 
 function searchStockImage(keyword) {
-  let keys = getApiKeys();
-  
+  let keys = getLocalStoredApiKeys();
+  if (Object.keys(keys).length === 0) {
+    apiKeyDiv.classList.remove("hidden");
+  }
+  if (keys.pixabay != undefined) {
     getpixabayaImages(keyword, page, keys.pixabay);
- 
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://pixabay.com/service/about/api/" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayPixabayImages.appendChild(div);
+  }
+  if (keys.unsplash != undefined) {
     getunsplashImages(keyword, page, keys.unsplash);
-
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://unsplash.com/developers" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayunsplashImages.appendChild(div);
+  }
+  if (keys.pexel != undefined) {
     getpexelImages(keyword, page, keys.pexel);
-
+  }else{
+    const div = document.createElement("div");
+    div.classList.add("image-div");
+    div.innerHTML = `<div class="image">
+        <img src='https://cdn.pixabay.com/photo/2018/04/24/22/33/key-3348307_1280.jpg' alt="key">
+    </div>
+    <div class="tittle">
+        <p><a href="https://www.pexels.com/api/" target="_blank">Api Key Required</a></p> 
+    </div>`;
+    displayPexelImages.appendChild(div);
+  }
   page++;
   if (page > 1) {
     showMoreBtn.classList.remove("hidden")
@@ -128,16 +166,45 @@ function pexelDataHandler(items) {
   });
 }
 
+function apiKeyHandler(event) {
+  event.preventDefault();
+  const pixabayKey = document.querySelector("#pixa").value;
+  const unplashyKey = document.querySelector("#unsp").value;
+  const pexelKey = document.querySelector("#pexe").value;
 
+  let storedKeys = getLocalStoredApiKeys();
+  storedKeys.pixabay = pixabayKey;
+  storedKeys.unsplash = unplashyKey;
+  storedKeys.pexel = pexelKey;
 
-function getApiKeys() {
-  const pixabay = process.env.pixabay 
-  const unsplash = process.env.unsplash 
-  const pexel = process.env.pexel 
-
-  return{pixabay, unsplash, pexel}
+  localStorage.setItem("apikeys", JSON.stringify(storedKeys));
+  if (
+    storedKeys.pixabay != "" ||
+    storedKeys.unsplash != "" ||
+    storedKeys.pexel != ""
+  ) {
+    apiKeyDiv.classList.add("hidden");
+  }
 }
 
+function getLocalStoredApiKeys() {
+  return localStorage.getItem("apikeys")
+    ? JSON.parse(localStorage.getItem("apikeys"))
+    : {}
+}
+
+document.querySelector("#setKeys").addEventListener("click", () => {
+  let storedKeys = getLocalStoredApiKeys();
+  apiKeyDiv.classList.remove("hidden");
+
+  document.querySelector("#pixa").value = storedKeys.pixabay;
+  document.querySelector("#unsp").value = storedKeys.unsplash;
+  document.querySelector("#pexe").value = storedKeys.pexel;
+});
+
+document
+  .getElementById("close-keys-tab")
+  .addEventListener("click", () => apiKeyDiv.classList.add("hidden"));
 
 navBtnPixabay.addEventListener("click", () => {
   navBtnPixabay.classList.add("active");

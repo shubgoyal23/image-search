@@ -64,6 +64,9 @@ nav ul li button {
   background-color: #c7d4e49a;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.scale{
+  scale: 1.1;
+}
 .search button {
   box-sizing: border-box;
   height: 40px;
@@ -103,14 +106,15 @@ nav ul li button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 1rem auto;
   background-color: rgb(246, 246, 246);
+  transition: all ease 0.3s;
+}
+.image-div:hover{
+  scale: 1.1;
 }
 .image {
   width: 100%;
   margin: 0;
   overflow: hidden;
-}
-.image:hover{
-  opacity: 0.7;
 }
 .image img {
   width: 100%;

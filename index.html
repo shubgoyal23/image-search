@@ -1,16 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore a vast collection of stock images in one convenient place. Easily download and use high-quality images for your projects. Take full control of the images you need and enhance your content." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <title>Stock Image</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <title>Stock Image Search</title>
+    <link rel="icon" type="image/x-icon" href="sis.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><button id="Show-all" class="active">Show All</button></li>
+            <li><button id="Pixabay">Pixabay</button></li>
+            <li><button id="Unsplash">Unsplash</button></li>
+            <li><button id="Pexels">Pexels</button></li>
+            <li><button id="setKeys">Api Keys</button></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>All In One Stock Image Search</h1>
+    </div>
+    <div class="search">
+        <form action="">
+            <input type="text" placeholder="Search for Image" id="input-feild">
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="result-image-container">
+        <div class="pixabay-container">
+            
+        </div>
+        <div class="pexel-container">
+           
+        </div>
+        <div class="unsplash-container">
+           
+        </div>
+    </div>
+    <div>
+        <button id="showMore" class="hidden">Show More</button>
+    </div>
+    <div class="apiKey hidden">
+        <div class="keys">
+            <button id="close-keys-tab">X</button>
+            <h1>API Keys Required</h1>
+            <form action="">
+                <input type="text" id="pixa" placeholder="Pixabay API Key">
+                <input type="text" id="unsp" placeholder="Unsplash API Key">
+                <input type="text" id="pexe" placeholder="Pexels API Key">
+                <input type="submit" id="btn-api">
+            </form>
+            <p>Please Enter Atlest One API Key to continue To use this App.
+                You can Find Keys here <a href="https://pixabay.com/service/about/api/" target="_blank">Pixabay</a>, <a
+                    href="https://www.pexels.com/api/" target="_blank">Pexels</a>, <a
+                    href="https://unsplash.com/developers" target="_blank">Unsplash</a>. Don't worry we don't keep your
+                key with us its stored in your computer only.</p>
+        </div>
+    </div>
+    <div class="hidden">
+        <a href="https://proteinslice.com/">Visit</a>
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,65 @@
+
+.images-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .image-div {
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #a3a5a77c;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.144);
+    transition: all ease 0.3s;
+    margin: 0.5rem auto;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.432);
+  }
+  .image-div:hover{
+    scale: 1.05;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.432);
+  }
+  .image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .tittle p {
+    margin: 0.1rem auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+    text-transform: capitalize;
+  }
+  .tittle a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 520px) {
+    .image-div {
+      width: 100%;
+    }
+    nav ul {
+      gap: 0.2rem;
+    }
+  }
+  
+
+.image-by{
+    color: #39d15a;
+}
+  

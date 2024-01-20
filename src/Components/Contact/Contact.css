@@ -1,0 +1,15 @@
+.contact {
+    text-align: center;
+    margin: 5rem auto;
+}
+.contact h1{
+    color: #605ffc;
+    text-decoration: underline;
+    
+}
+.contact a{
+    color: #b42ff0;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+}

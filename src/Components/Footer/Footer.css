@@ -1,0 +1,50 @@
+
+footer{
+    height: 20rem;
+    text-align: center;
+  
+  }
+  footer .copywrite hr{
+    width: 80%;
+    border-radius: 10px;
+  }
+  footer .copywrite h6{
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  footer .info{
+    height: 15rem;
+    margin: 0.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .info .c-1, .c-2, .c-3{
+    flex: 1;
+    
+  }
+  footer .info .c-1 img{
+    width: 80%;
+  }
+  footer .info li{
+    list-style: none; 
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin: 0.8rem;
+  }
+  footer .info li a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize
+  }
+  footer .info h5{
+    text-decoration: underline;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    margin: 0.5rem;
+    margin-left: 3rem;
+  }
+  .active-b{
+    color: var(--Color3) !important;
+  }

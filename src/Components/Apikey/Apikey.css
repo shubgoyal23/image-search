@@ -1,0 +1,31 @@
+.apiKey {
+    background-color: #000000d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3rem auto;
+
+  }
+  .keys {
+    max-width: 420px;
+    padding: 15px;
+    position: relative;
+  }
+  .keys form input {
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 80%;
+    padding-left: 20px;
+    background-color: #f0eaea;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 0.5rem;
+  }
+  #btn-api {
+    background-color: #b42ff0;
+    color: white;
+    cursor: pointer;
+  }
+  
